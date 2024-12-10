@@ -5,13 +5,12 @@ import zooAnimales.Animal;
 
 public class Zona{
     private String nombre;
-    private Zoologico[] zoo;
-    private ArrayList<Animal> animales;
+    private final Zoologico zoo;
+    private ArrayList<Animal> animales = new ArrayList<>();
 
     public Zona(String nombre, Zoologico zoo){
         this.nombre=nombre;
-        this.zoo = new Zoologico[1];
-        this.zoo[0] = zoo;
+        this.zoo = zoo;
     }
     public Zona(){
         this(null, null);
@@ -22,10 +21,9 @@ public class Zona{
     public int cantidadAnimales(){
         return animales.size();
     }
-    public Zoologico getZoo(){return zoo[0];}
+    public Zoologico getZoo(){return zoo;}
     public String getNombre(){return nombre;}
     public void setNombre(String nombre){this.nombre=nombre;}
-    public void setZoo(Zoologico zoo){this.zoo[0]=zoo;}
     @Override
     public String toString(){
         return nombre;
